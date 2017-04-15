@@ -1,0 +1,2 @@
+# MyScala
+Learning some Scala
