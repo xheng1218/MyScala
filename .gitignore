@@ -1,3 +1,16 @@
+# data
+*.log
+*.out
+*.txt
+*.pdf
+*.csv
+
+# vim
+*.swp
+*.swo
+*~
+
+# 
 *.class
 *.log
 
