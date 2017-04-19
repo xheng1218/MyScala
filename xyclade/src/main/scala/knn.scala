@@ -1,13 +1,39 @@
 import java.io.File
+// import scala.swing.SimpleSwingApplication
 
 
 object KNNExample {
+
   def main(args: Array[String]): Unit = {
   	val projectHome = "/Users/xin.heng/dev/xheng1218/MyScala/xyclade"
   	val basePath = projectHome + "/data/KNN_Example_1.csv"
   	val testData = getDataFromCSV(new File(basePath))
-  }
 
+  	// val cv = new CrossValidation(testData._2.length, validationRounds=2)
+
+  	val testDataWithIndices = (testData._1.zipWithIndex,
+  							   testData._2.zipWithIndex)
+
+  	//val trainingDPSets = cv.train.map(indexList => indexList).
+  	//    map(index => testDataWithIndices._1.collectFirst {
+  	//    	case (dp, `index`) => dp}.get)
+  	println("\nALL DONE")
+
+  }
+  /*
+  def top = new MainFrame {
+  	title = "KNN Exmample"
+  	val projectHome = "/Users/xin.heng/dev/xheng1218/MyScala/xyclade"
+  	val basePath = projectHome + "/data/KNN_Example_1.csv"
+  	val testData = getDataFromCSV(new File(basePath))
+
+  	val plot = ScatterPlot.plot(testData._1, testData._2,
+  		'@', Array(Color.red, Color.blue))
+  	peer.setContentPane(plot)
+  	size = new Dimension(400, 400)
+  }
+  */
+  
   def getDataFromCSV(file: File): (Array[Array[Double]], Array[Int]) = {
   	val source = scala.io.Source.fromFile(file)
   	val data = source.getLines().drop(1).map(x => getDataFromString(x)).toArray
