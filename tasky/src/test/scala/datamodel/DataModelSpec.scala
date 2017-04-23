@@ -2,7 +2,7 @@ package datamodel
 
 import org.scalatest.{BeforeAndAfterEach, FunSpec, Matchers}
 import java.time.LocalDateTime
-import scala.concurrent._
+import scala.concurrent.Await
 import scala.concurrent.duration._
 
 import slick.driver.H2Driver.api._
